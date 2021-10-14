@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="index, follow">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="shortcut icon" href="favicon" type="image/x-icon">
+        <title>Hephaestus</title>
+    </head>
+    <body>
+        <div id="systemData">
+            <div id="hostnameContainer">
+                Hostname: <span id="hostname"></span>
+            </div>
+            <div id="kernelVersionContainer">
+                Kernel Version: <span id="kernelVersion"></span>
+            </div>
+            <div id="architectureContainer">
+                Architecture: <span id="architecture"></span>
+            </div>
+            <div id="localeContainer">
+                Locale: <span id="locale"></span>
+            </div>
+        </div><br>
+        <div id="cpuData">
+            <div id="cpuNameContainer">
+                CPU: <span id="cpuName"></span>
+            </div>
+            <div id="cpuVendorContainer">
+                Vendor ID: <span id="cpuVendor"></span>
+            </div>
+            <div id="cpuNumaContainer">
+                NUMA Node(s): <span id="cpuNuma"></span>
+            </div>
+            <div id="cpuCoreContainer">
+                CPU Cores: <span id="cpuCores"></span>
+            </div>
+            <div id="threadsPerCoreContainer">
+                Threads per Core: <span id="threadsPerCore"></span>
+            </div>
+            <div id="cpuThreadContainer">
+                CPU Threads: <span id="cpuThreads"></span>
+            </div>
+            <div id="cpuBoostFreqContainer">
+                Boost Frequency: <span id="cpuBoostFreq"></span>
+            </div>
+            <div id="cpuCurrentFreqContainer">
+                Current Frequency: <span id="cpuCurrentFreq"></span>
+                <progress id="cpuFreqBar" min="0" max="100"></progress>
+            </div>
+            <div id="cpuVContainer">
+                Virtualization: <span id="cpuV"></span>
+            </div>
+        </div>
+        <div id="gpuData"></div>
+        <div id="driveData"></div>
+    </body>
+    <script src="script.js"></script>
+    <script src="jquery"></script>
+</html>
