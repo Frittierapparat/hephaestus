@@ -2,7 +2,7 @@ import subprocess as sp
 import json
 import re
 
-#function converting lscpu json output to usable json output
+#function converting lscpu json output to usable json
 def garbageToUsableJson(data, key):
     usableJson = {}
     for i in range(len(data[key])):
