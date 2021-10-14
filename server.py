@@ -25,11 +25,6 @@ class myServer(BaseHTTPRequestHandler):
             self.send_header("Content-type", "text/css; charset=utf-8")
             self.end_headers()
             self.wfile.write(open("website/styles.css", "rb").read())
-        elif self.path == "/jquery":
-            self.send_response(200)
-            self.send_header("Content-type", "application/javascript; charset=utf-8")
-            self.end_headers()
-            self.wfile.write(open("website/jquery-3.6.0.min.js", "rb").read())
         elif self.path == "/favicon":
             self.send_response(200)
             self.send_header("Content-type", "image/vnd.microsoft.icon")
