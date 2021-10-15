@@ -29,6 +29,7 @@ def getDrivesAsDict(data):
 def getCpuData(data):
     return {
         "modelName": re.search("(?<=model name\t: ).*", data).group(),
+        "architecture": sp.getoutput("uname -m"),
         "cores": int(re.search("(?<=cpu cores\t: ).*", data).group()),
         "threads": int(re.search("(?<=siblings\t: ).*", data).group()),
         "threadsPerCore": int(re.search("(?<=siblings\t: ).*", data).group()) / int(re.search("(?<=cpu cores\t: ).*", data).group()),
@@ -46,7 +47,6 @@ def getData():
     hostName = sp.getoutput("uname -n")
     kernelRelease = sp.getoutput("uname -r")
     os = sp.getoutput("uname -o")
-    architecture = sp.getoutput("uname -m")
     cpuData = getCpuData(sp.getoutput("cat /proc/cpuinfo"))
     gpuData = json.loads(sp.getoutput("lshw -json -C display 2>/dev/null"))
     drives = getDrivesAsDict(json.loads(sp.getoutput("lsblk -blOJ")))
@@ -56,7 +56,7 @@ def getData():
         "hostname": hostName,
         "os": os,
         "kernelVersion": kernelRelease,
-        "architecture": architecture,
+        "architecture": cpuData["architecture"],
         "locale": getLocale()
     },
     "cpu": {
