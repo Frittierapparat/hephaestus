@@ -2,4 +2,15 @@ body{
     color: #EEE;
     background-color: #222;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 5%;
+}
+
+.container{
+    display: inline-block;
+    width: auto;
+    border: 2px solid rgb(78, 78, 78);
+    border-radius: 2px;
 }

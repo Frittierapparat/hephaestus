@@ -3,7 +3,7 @@ var serverAddress = "http://localhost:8080";
 //function to create a dynamic list of gpus
 function showGpus(data){
     for (let i = 0; i < Object.keys(data.gpu).length; i++){
-        $("#gpuData").append("<br><div id=\"gpu" + i + "\"></div>")
+        $("#gpuData").append("<div id=\"gpu" + i + "\"></div>")
         $("#gpu"+ i).append("<div id=\"gpu" + i + "Name\">" + data.gpu[i].vendor + " " + data.gpu[i].product + "</div>")
     }
 };
@@ -22,10 +22,10 @@ function exportData(data){
     $("#cpuFreqBar").attr("value", data.cpu.usage)
     for (let i = 0; i < Object.keys(data.drives).length; i++){
         if (data.drives[i].mountpoint === null){
-            $("#driveData").append("<br><div id=\"drive" + i + "\">" + data.drives[i].name + "</div>")
+            $("#driveData").append("<div id=\"drive" + i + "\">" + data.drives[i].name + "</div>")
         }
         else{
-            $("#driveData").append("<br><div id=\"drive" + i + "\">" + data.drives[i].name + "(" + data.drives[i].mountpoint.substring(data.drives[i].mountpoint.search(/(?<=\/)[^/]+$/gm)) + ")" + "</div>")
+            $("#driveData").append("<div id=\"drive" + i + "\">" + data.drives[i].name + "(" + data.drives[i].mountpoint.substring(data.drives[i].mountpoint.search(/(?<=\/)[^/]+$/gm)) + ")" + "</div>")
         }
         if (data.drives[i].removable == true){
             $("#drive" + i).append("<img src=\"icons/usb.svg\">")
@@ -36,7 +36,6 @@ function exportData(data){
     }
     $("#cpuV").text(data.cpu.virtualization);
     $("#cpuNuma").text(data.cpu.numaNodes);
-    $("#threadsPerCore").text(data.cpu.threadsPerCore);
     $("#cpuVendor").text(data.cpu.vendorID);
     showGpus(data)
 };

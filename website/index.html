@@ -8,52 +8,24 @@
         <title>Hephaestus</title>
     </head>
     <body>
-        <div id="systemData">
-            <div id="hostnameContainer">
-                Hostname: <span id="hostname"></span>
-            </div>
-            <div id="kernelVersionContainer">
-                Kernel Version: <span id="kernelVersion"></span>
-            </div>
-            <div id="architectureContainer">
-                Architecture: <span id="architecture"></span>
-            </div>
-            <div id="localeContainer">
-                Locale: <span id="locale"></span>
-            </div>
-        </div><br>
-        <div id="cpuData">
-            <div id="cpuNameContainer">
-                CPU: <span id="cpuName"></span>
-            </div>
-            <div id="cpuVendorContainer">
-                Vendor ID: <span id="cpuVendor"></span>
-            </div>
-            <div id="cpuNumaContainer">
-                NUMA Node(s): <span id="cpuNuma"></span>
-            </div>
-            <div id="cpuCoreContainer">
-                CPU Cores: <span id="cpuCores"></span>
-            </div>
-            <div id="threadsPerCoreContainer">
-                Threads per Core: <span id="threadsPerCore"></span>
-            </div>
-            <div id="cpuThreadContainer">
-                CPU Threads: <span id="cpuThreads"></span>
-            </div>
-            <div id="cpuBoostFreqContainer">
-                Boost Frequency: <span id="cpuBoostFreq"></span>
-            </div>
-            <div id="cpuCurrentFreqContainer">
-                Current Frequency: <span id="cpuCurrentFreq"></span>
-                <progress id="cpuFreqBar" min="0" max="100"></progress>
-            </div>
-            <div id="cpuVContainer">
-                Virtualization: <span id="cpuV"></span>
-            </div>
+        <div id="systemData" class="container">
+            Hostname: <span id="hostname"></span><br>
+            Kernel Version: <span id="kernelVersion"></span><br>
+            Architecture: <span id="architecture"></span><br>
+            Locale: <span id="locale"></span><br>
         </div>
-        <div id="gpuData"></div>
-        <div id="driveData"></div>
+        <div id="cpuData" class="container">
+            CPU: <span id="cpuName"></span><br>
+            Vendor ID: <span id="cpuVendor"></span><br>
+            Numa Node(s): <span id="cpuNuma"></span><br>
+            CPU Cores: <span id="cpuCores"></span><br>
+            Threads: <span id="cpuThreads"></span><br>
+            Boost Frequency: <span id="cpuBoostFreq"></span><br>
+            Current Frequency: <span id="cpuCurrentFreq"></span><progress id="cpuFreqBar" min="0" max="100"></progress><br>
+            Virtualization: <span id="cpuV"></span><br>
+        </div>
+        <div id="gpuData" class="container"></div>
+        <div id="driveData" class="container"></div>
     </body>
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
